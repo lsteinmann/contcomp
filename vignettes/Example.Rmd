@@ -16,7 +16,7 @@ knitr::opts_chunk$set(
   fig.width=7,
   fig.height = 5
 )
-library(shapAARadd)
+library(shapare)
 ```
 
 This package is designed to compare shapes of vessel or possibly other objects. It depends on the contour vectors
@@ -34,7 +34,7 @@ The txt-files from one folder (*txtpath*) can be loaded into a single data frame
 
 ```{r load_shapaar_contours}
 txtpath = "../inst/doc/"
-shapaardata_df <- shapAARadd::load_shapaar_contours(txtpath)
+shapaardata_df <- load_shapaar_contours(txtpath)
 knitr::kable(head(shapaardata_df))
 ```
 
@@ -102,7 +102,7 @@ frechet_dist <- get_frechet_dist(model_df = model_df)
 
 SD seems to work better, but in the end both don't work as well as the [Frechet-Distance](https://en.wikipedia.org/wiki/Fr%C3%A9chet_distance) (in this case from the package [SimilarityMeasures](https://www.rdocumentation.org/packages/SimilarityMeasures/versions/1.4/topics/Frechet)). I thought that the Procrustes-Distance might be worth a try, but am not happy with the results. 
 
-I will only illustrate the results of the Frechet-Distance measure. There are two ways of visualizing the results, one being in a coordinate system with coordinated obtained via principal coordinates analysis:
+I will only illustrate the results of the Frechet-Distance measure. There are two ways of visualizing the results, one being in a coordinate system with coordinates obtained via principal coordinates analysis (cmdscale()):
 
 ```{r principal coordinates analysis + plot, warning=FALSE}
 frechet_coords <- as.data.frame(cmdscale(frechet_dist))
@@ -122,7 +122,7 @@ ggplot(data = frechet_coords, aes(x = x, y = y)) +
 
 This seems to seperate different types rather nicely. Maybe another dimension could be added to display the objects in a 3D-coordinate system, to differentiate a bit better.
 
-shapAARadd provides some other functions to find similar and dissimilar vessels and visually compare them:
+shapare provides some other functions to find similar and dissimilar vessels and visually compare them:
 
 ```{r find_max_dist + plot}
 find_max_dist(frechet_dist)
