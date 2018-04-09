@@ -1,5 +1,5 @@
 ---
-title: "an addition to shapAAR"
+title: "shapare - shape/compare - an addition to shapAAR"
 author: "Lisa Steinmann"
 date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
