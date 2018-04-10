@@ -24,7 +24,7 @@ clean_contour_df <- function(shapaardata_df) {
           rownum <- c(rownum, row)
           rowval <- c(rowval, shapaardata_df[row,col])
           if (length(shapaardata_df[(row-1),col]) == 0) {
-            shapaardata_df[row,col] <- shapaardata_df[match(FALSE, is.infinite(shapaardata_df[,1])),col]
+            shapaardata_df[row,col] <- shapaardata_df[match(FALSE, is.infinite(shapaardata_df[,col])),col]
           } else {
             shapaardata_df[row,col] <- shapaardata_df[(row-1),col]
           }
