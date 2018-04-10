@@ -1,10 +1,10 @@
 ---
-title: "shapare - shape/compare - an addition to shapAAR"
+title: "contcomp - contour compare - an addition to shapAAR"
 author: "Lisa Steinmann"
 date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{"an addition to shapAAR"}
+  %\VignetteIndexEntry{"contcomp - an addition to shapAAR"}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
@@ -16,7 +16,7 @@ knitr::opts_chunk$set(
   fig.width=7,
   fig.height = 5
 )
-library(shapare)
+library(contcomp)
 ```
 
 This package is designed to compare shapes of vessel or possibly other objects. It depends on the contour vectors
@@ -122,7 +122,7 @@ ggplot(data = frechet_coords, aes(x = x, y = y)) +
 
 This seems to seperate different types rather nicely. Maybe another dimension could be added to display the objects in a 3D-coordinate system, to differentiate a bit better.
 
-shapare provides some other functions to find similar and dissimilar vessels and visually compare them:
+contcomp provides some other functions to find similar and dissimilar vessels and visually compare them:
 
 ```{r find_max_dist + plot}
 find_max_dist(frechet_dist)

@@ -1,6 +1,6 @@
-Package: shapare
+Package: contcomp
 Type: Package
-Title: Comparing Shapes of Pottery Vessels and other Objects
+Title: Comparing Shapes/Contours of Pottery Vessels and other Objects
 Version: 0.1.0
 Author: Lisa Steinmann
 Maintainer: <lisa.steinmann@rub.de>
